@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### Breaking Changes
+
+-   Removed support for live reload in the `start` command ([#28273](https://github.com/WordPress/gutenberg/pull/28273)).
+-   The bundled `webpack-cli` dependency has been updated to the next major version `^4.9.1` ([#28273](https://github.com/WordPress/gutenberg/pull/28273)).
+
+### New Features
+
+-   Added optional support for React Fast Refresh in the `start` command. It can be activated with `--hot` CLI argument ([#28273](https://github.com/WordPress/gutenberg/pull/28273)).
+
 ## 19.1.0 (2021-11-07)
 
 ### Enhancements

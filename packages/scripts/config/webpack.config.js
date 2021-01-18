@@ -2,13 +2,13 @@
  * External dependencies
  */
 const { BundleAnalyzerPlugin } = require( 'webpack-bundle-analyzer' );
-const LiveReloadPlugin = require( 'webpack-livereload-plugin' );
-const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
-const TerserPlugin = require( 'terser-webpack-plugin' );
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const browserslist = require( 'browserslist' );
 const fs = require( 'fs' );
+const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
 const path = require( 'path' );
+const ReactRefreshWebpackPlugin = require( '@pmmmwh/react-refresh-webpack-plugin' );
+const TerserPlugin = require( 'terser-webpack-plugin' );
 
 /**
  * WordPress dependencies
@@ -26,6 +26,7 @@ const {
 	hasPostCSSConfig,
 } = require( '../utils' );
 
+const DEV_SERVER_PORT = 8887;
 const isProduction = process.env.NODE_ENV === 'production';
 const mode = isProduction ? 'production' : 'development';
 let target = 'browserslist';
@@ -97,12 +98,6 @@ const cssLoaders = [
 	},
 ];
 
-const getLiveReloadPort = ( inputPort ) => {
-	const parsedPort = parseInt( inputPort, 10 );
-
-	return Number.isInteger( parsedPort ) ? parsedPort : 35729;
-};
-
 const config = {
 	mode,
 	target,
@@ -110,6 +105,7 @@ const config = {
 	output: {
 		filename: '[name].js',
 		path: path.resolve( process.cwd(), 'build' ),
+		publicPath: `//127.0.0.1:${ DEV_SERVER_PORT }/build/`,
 	},
 	resolve: {
 		alias: {
@@ -118,8 +114,7 @@ const config = {
 	},
 	optimization: {
 		// Only concatenate modules in production, when not analyzing bundles.
-		concatenateModules:
-			mode === 'production' && ! process.env.WP_BUNDLE_ANALYZER,
+		concatenateModules: isProduction && ! process.env.WP_BUNDLE_ANALYZER,
 		splitChunks: {
 			cacheGroups: {
 				style: {
@@ -177,6 +172,12 @@ const config = {
 										'@wordpress/babel-preset-default'
 									),
 								],
+								plugins: [
+									! isProduction &&
+										require.resolve(
+											'react-refresh/babel'
+										),
+								].filter( Boolean ),
 							} ),
 						},
 					},
@@ -238,11 +239,12 @@ const config = {
 		process.env.WP_BUNDLE_ANALYZER && new BundleAnalyzerPlugin(),
 		// MiniCSSExtractPlugin to extract the CSS thats gets imported into JavaScript.
 		new MiniCSSExtractPlugin( { filename: '[name].css' } ),
-		// WP_LIVE_RELOAD_PORT global variable changes port on which live reload
-		// works when running watch mode.
+		// React Fast Refresh.
 		! isProduction &&
-			new LiveReloadPlugin( {
-				port: getLiveReloadPort( process.env.WP_LIVE_RELOAD_PORT ),
+			new ReactRefreshWebpackPlugin( {
+				overlay: {
+					sockPort: DEV_SERVER_PORT,
+				},
 			} ),
 		// WP_NO_EXTERNALS global variable controls whether scripts' assets get
 		// generated, and the default externals set.
@@ -264,6 +266,17 @@ if ( ! isProduction ) {
 		use: require.resolve( 'source-map-loader' ),
 		enforce: 'pre',
 	} );
+	config.devServer = {
+		headers: {
+			// Requests come from the WP port.
+			'Access-Control-Allow-Origin': '*',
+		},
+		liveReload: false,
+		port: DEV_SERVER_PORT,
+		devMiddleware: {
+			writeToDisk: true,
+		},
+	};
 }
 
 module.exports = config;
