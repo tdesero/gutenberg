@@ -89,7 +89,7 @@ import * as socialLink from './social-link';
 import * as socialLinks from './social-links';
 import * as spacer from './spacer';
 import * as table from './table';
-// import * as tableOfContents from './table-of-contents';
+import * as tableOfContents from './table-of-contents';
 import * as tagCloud from './tag-cloud';
 import * as templatePart from './template-part';
 import * as termDescription from './term-description';
@@ -190,7 +190,7 @@ export const __experimentalGetCoreBlocks = () => [
 	socialLinks,
 	spacer,
 	table,
-	// tableOfContents,
+	tableOfContents,
 	tagCloud,
 	templatePart,
 	termDescription,
