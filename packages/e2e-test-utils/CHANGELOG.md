@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Breaking Changes
+
+-   The peer `jest` dependency has been updated from requiring `>=26` to requiring `>=27` (see [Breaking Changes](https://jestjs.io/blog/2021/05/25/jest-27), [#33287](https://github.com/WordPress/gutenberg/pull/33287)).
+
+### New Features
+
 -   Added `disablePageDialogAccept` - Disable auto-accepting dialogs enabled by `enablePageDialogAccept` [#35828](https://github.com/WordPress/gutenberg/pull/35828).
 
 ## 5.4.0 (2021-07-21)

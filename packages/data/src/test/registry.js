@@ -11,7 +11,7 @@ import { createRegistrySelector } from '../factory';
 import createReduxStore from '../redux-store';
 import { STORE_NAME } from '../store/name';
 
-jest.useFakeTimers();
+jest.useFakeTimers( 'legacy' );
 
 describe( 'createRegistry', () => {
 	let registry;

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Breaking Changes
+
+-   The peer `jest` dependency has been updated from requiring `>=26` to requiring `>=27` (see [Breaking Changes](https://jestjs.io/blog/2021/05/25/jest-27), [#33287](https://github.com/WordPress/gutenberg/pull/33287)).
+-   The bundled `jest-dev-server` dependency has been updated to the next major version `^6.0.0` ([#33287](https://github.com/WordPress/gutenberg/pull/33287)).
+
 ### Enhancements
 
 -   Increase the timeout for e2e tests to 30 seconds ([#35983](https://github.com/WordPress/gutenberg/pull/35983)).
