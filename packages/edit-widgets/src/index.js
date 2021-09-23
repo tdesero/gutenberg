@@ -16,6 +16,7 @@ import {
 } from '@wordpress/block-library';
 import { __experimentalFetchLinkSuggestions as fetchLinkSuggestions } from '@wordpress/core-data';
 import {
+	registerInternalWidgetIds,
 	registerLegacyWidgetBlock,
 	registerLegacyWidgetVariations,
 	registerWidgetGroupBlock,
@@ -83,7 +84,10 @@ export function initialize( id, settings ) {
 		themeStyles: true,
 	} );
 
+	registerInternalWidgetIds();
+
 	dispatch( blocksStore ).__experimentalReapplyBlockTypeFilters();
+
 	registerCoreBlocks( coreBlocks );
 	registerLegacyWidgetBlock();
 	if ( process.env.GUTENBERG_PHASE === 2 ) {
