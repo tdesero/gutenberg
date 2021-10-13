@@ -140,7 +140,6 @@ export {
 	isValidIcon,
 	getBlockLabel as __experimentalGetBlockLabel,
 	getAccessibleBlockLabel as __experimentalGetAccessibleBlockLabel,
-	__experimentalSanitizeBlockAttributes,
 	__experimentalGetBlockAttributesNamesByRole,
 	__experimentalRemoveAttributesByRole,
 } from './utils';
