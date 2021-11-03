@@ -12,6 +12,12 @@
 		},
 		"width": {
 			"type": "number"
+		},
+		"heightUnit": {
+			"type": "string"
+		},
+		"widthUnit": {
+			"type": "string"
 		}
 	},
 	"usesContext": [ "orientation" ],
