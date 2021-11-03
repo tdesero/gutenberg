@@ -53,7 +53,9 @@
 					{
 						"docs/how-to-guides/javascript/extending-the-block-editor.md": []
 					},
-					{ "docs/how-to-guides/native-mobile/osx-setup-guide.md": [] },
+					{
+						"docs/how-to-guides/native-mobile/osx-setup-guide.md": []
+					},
 					{ "docs/how-to-guides/javascript/troubleshooting.md": [] },
 					{
 						"docs/how-to-guides/javascript/versions-and-building.md": []
@@ -220,6 +222,7 @@
 					}
 				]
 			},
+			{ "docs/reference-guides/core-blocks.md": [] },
 			{
 				"docs/reference-guides/filters/README.md": [
 					{ "docs/reference-guides/filters/block-filters.md": [] },
