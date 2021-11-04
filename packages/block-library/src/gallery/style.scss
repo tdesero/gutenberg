@@ -65,7 +65,12 @@
 			}
 		}
 
-		&.is-style-rounded {
+		&.has-custom-border img {
+			box-sizing: border-box;
+		}
+
+		&.is-style-rounded,
+		&.has-custom-border {
 			> div,
 			> a {
 				flex: 1 1 auto;
