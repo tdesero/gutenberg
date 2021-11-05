@@ -7,7 +7,6 @@ import classnames from 'classnames';
  * WordPress dependencies
  */
 import { useResizeObserver } from '@wordpress/compose';
-import { forwardRef } from '@wordpress/element';
 
 /**
  * Internal dependencies
@@ -26,24 +25,20 @@ import Icon from '../icon';
  * @param {Object}    props.notices        A rendered notices list.
  * @param {Object}    props.preview        Preview to be rendered in the placeholder.
  * @param {boolean}   props.isColumnLayout Whether a column layout should be used.
- * @param {Object}    ref                  Forwarded ref.
  *
  * @return {Object} The rendered placeholder.
  */
-export function Placeholder(
-	{
-		icon,
-		children,
-		label,
-		instructions,
-		className,
-		notices,
-		preview,
-		isColumnLayout,
-		...additionalProps
-	},
-	ref
-) {
+function Placeholder( {
+	icon,
+	children,
+	label,
+	instructions,
+	className,
+	notices,
+	preview,
+	isColumnLayout,
+	...additionalProps
+} ) {
 	const [ resizeListener, { width } ] = useResizeObserver();
 
 	// Since `useResizeObserver` will report a width of `null` until after the
@@ -66,7 +61,7 @@ export function Placeholder(
 		'is-column-layout': isColumnLayout,
 	} );
 	return (
-		<div { ...additionalProps } className={ classes } ref={ ref }>
+		<div { ...additionalProps } className={ classes }>
 			{ resizeListener }
 			{ notices }
 			{ preview && (
@@ -88,4 +83,4 @@ export function Placeholder(
 	);
 }
 
-export default forwardRef( Placeholder );
+export default Placeholder;
