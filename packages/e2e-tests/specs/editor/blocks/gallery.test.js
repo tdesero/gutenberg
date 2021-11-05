@@ -19,7 +19,7 @@ import {
 async function placeholderUpload() {
 	const input = await page.waitForFunction( () =>
 		document
-			.querySelector( '.wp-block-editor-placeholder' )
+			.querySelector( '.wp-block-gallery .wp-block-editor-placeholder' )
 			?.shadowRoot.querySelector( 'input[type="file"]' )
 	);
 	return upload( input );
