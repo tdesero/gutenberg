@@ -11,16 +11,27 @@
  */
 function gutenberg_experimental_global_styles_enqueue_assets() {
 	$stylesheet = gutenberg_get_global_stylesheet();
-	if ( empty( $stylesheet ) ) {
-		return;
+	if ( ! empty( $stylesheet ) ) {
+		if ( isset( wp_styles()->registered['global-styles'] ) ) {
+			wp_styles()->registered['global-styles']->extra['after'][0] = $stylesheet;
+		} else {
+			wp_register_style( 'global-styles', false, array(), true, true );
+			wp_add_inline_style( 'global-styles', $stylesheet );
+			wp_enqueue_style( 'global-styles' );
+		}
 	}
 
-	if ( isset( wp_styles()->registered['global-styles'] ) ) {
-		wp_styles()->registered['global-styles']->extra['after'][0] = $stylesheet;
-	} else {
-		wp_register_style( 'global-styles', false, array(), true, true );
-		wp_add_inline_style( 'global-styles', $stylesheet );
-		wp_enqueue_style( 'global-styles' );
+	$filters = gutenberg_get_global_styles_svg_filters();
+	if ( ! empty( $filters ) ) {
+		add_action(
+			// Safari doesn't render SVG filters defined in data URIs,
+			// and SVG filters won't render in the head of a document,
+			// so the next best place to put the SVG is in the footer.
+			is_admin() ? 'admin_footer' : 'wp_footer',
+			function () use ( $filters ) {
+				echo $filters;
+			}
+		);
 	}
 }
 
