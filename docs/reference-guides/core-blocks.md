@@ -46,7 +46,7 @@ Prompt visitors to take action with a group of button-style links.
 
 -	**Name:** core/buttons
 -	**Category:** design
--	**Supports:** align, anchor, spacing
+-	**Supports:** align (full, wide), anchor, spacing
 -	**Attributes:** contentJustification, orientation
 
 ## Calendar
@@ -91,7 +91,7 @@ Display content in multiple columns, with blocks added to each column.
 
 -	**Name:** core/columns
 -	**Category:** design
--	**Supports:** align, anchor, color, spacing
+-	**Supports:** align (full, wide), anchor, color, spacing
 -	**Attributes:** isStackedOnMobile, verticalAlignment
 
 ## Comment Template
@@ -109,7 +109,7 @@ An advanced block that allows displaying post comments based on different query 
 
 -	**Name:** core/comments-query-loop
 -	**Category:** theme
--	**Supports:** align, color
+-	**Supports:** align (full, wide), color
 -	**Attributes:** queryId, queryPerPage, tagName
 
 ## Cover
@@ -163,7 +163,7 @@ Combine blocks into a group.
 
 -	**Name:** core/group
 -	**Category:** design
--	**Supports:** align, anchor, color, spacing
+-	**Supports:** align (full, wide), anchor, color, spacing
 -	**Attributes:** tagName, templateLock
 
 ## Heading
@@ -172,7 +172,7 @@ Introduce new sections and organize content to help visitors (and search engines
 
 -	**Name:** core/heading
 -	**Category:** text
--	**Supports:** align, anchor, color, spacing, typography
+-	**Supports:** __unstablePasteTextInline, align (full, wide), anchor, color, spacing, typography
 -	**Attributes:** content, level, placeholder, textAlign
 
 ## Home Link
@@ -226,7 +226,7 @@ Create a bulleted or numbered list.
 
 -	**Name:** core/list
 -	**Category:** text
--	**Supports:** anchor, color, typography
+-	**Supports:** __unstablePasteTextInline, anchor, color, typography
 -	**Attributes:** ordered, placeholder, reversed, start, type, values
 
 ## Login/out
@@ -244,7 +244,7 @@ Set media and words side-by-side for a richer layout.
 
 -	**Name:** core/media-text
 -	**Category:** media
--	**Supports:** align, anchor, color
+-	**Supports:** align (full, wide), anchor, color
 -	**Attributes:** align, focalPoint, href, imageFill, isStackedOnMobile, linkClass, linkDestination, linkTarget, mediaAlt, mediaId, mediaLink, mediaPosition, mediaSizeSlug, mediaType, mediaUrl, mediaWidth, rel, verticalAlignment
 
 ## Unsupported
@@ -271,8 +271,8 @@ A collection of blocks that allow visitors to get around your site.
 
 -	**Name:** core/navigation
 -	**Category:** theme
--	**Supports:** align, anchor, inserter, spacing, typography
--	**Attributes:** backgroundColor, customBackgroundColor, customOverlayBackgroundColor, customOverlayTextColor, customTextColor, itemsJustification, navigationMenuId, openSubmenusOnClick, orientation, overlayBackgroundColor, overlayMenu, overlayTextColor, rgbBackgroundColor, rgbTextColor, showSubmenuIcon, textColor
+-	**Supports:** align (full, wide), anchor, inserter, spacing, typography
+-	**Attributes:** __unstableLocation, backgroundColor, customBackgroundColor, customOverlayBackgroundColor, customOverlayTextColor, customTextColor, itemsJustification, navigationMenuId, openSubmenusOnClick, orientation, overlayBackgroundColor, overlayMenu, overlayTextColor, rgbBackgroundColor, rgbTextColor, showSubmenuIcon, textColor
 
 ## Custom Link
 
@@ -316,7 +316,7 @@ Start with the building block of all narrative.
 
 -	**Name:** core/paragraph
 -	**Category:** text
--	**Supports:** anchor, color, typography
+-	**Supports:** __unstablePasteTextInline, anchor, color, typography
 -	**Attributes:** align, content, direction, dropCap, placeholder
 
 ## Pattern
@@ -406,7 +406,7 @@ Display a post's comments.
 
 -	**Name:** core/post-comments
 -	**Category:** theme
--	**Supports:** align, color, typography
+-	**Supports:** align (full, wide), color, typography
 -	**Attributes:** textAlign
 
 ## Post Comments Count
@@ -442,7 +442,7 @@ Displays the contents of a post or page.
 
 -	**Name:** core/post-content
 -	**Category:** theme
--	**Supports:** align
+-	**Supports:** align (full, wide)
 -	**Attributes:** 
 
 ## Post Date
@@ -469,7 +469,7 @@ Display a post's featured image.
 
 -	**Name:** core/post-featured-image
 -	**Category:** theme
--	**Supports:** align, color, spacing
+-	**Supports:** align (center, full, left, right, wide), color, spacing
 -	**Attributes:** height, isLink, scale, width
 
 ## Post Navigation Link
@@ -505,7 +505,7 @@ Displays the title of a post, page, or any other content-type.
 
 -	**Name:** core/post-title
 -	**Category:** theme
--	**Supports:** align, color, spacing, typography
+-	**Supports:** align (full, wide), color, spacing, typography
 -	**Attributes:** isLink, level, linkTarget, rel, textAlign
 
 ## Preformatted
@@ -523,7 +523,7 @@ Give special visual emphasis to a quote from your text.
 
 -	**Name:** core/pullquote
 -	**Category:** text
--	**Supports:** align, anchor, color
+-	**Supports:** align (full, left, right, wide), anchor, color
 -	**Attributes:** citation, textAlign, value
 
 ## Query Loop
@@ -532,7 +532,7 @@ An advanced block that allows displaying post types based on different query par
 
 -	**Name:** core/query
 -	**Category:** theme
--	**Supports:** align, color
+-	**Supports:** align (full, wide), color
 -	**Attributes:** displayLayout, query, queryId, tagName
 
 ## Query Pagination
@@ -577,7 +577,7 @@ Display the query title.
 
 -	**Name:** core/query-title
 -	**Category:** design
--	**Supports:** align, color, spacing, typography
+-	**Supports:** align (full, wide), color, spacing, typography
 -	**Attributes:** level, textAlign, type
 
 ## Quote
@@ -604,7 +604,7 @@ Help visitors find your content.
 
 -	**Name:** core/search
 -	**Category:** widgets
--	**Supports:** align, color
+-	**Supports:** align (center, left, right), color
 -	**Attributes:** buttonPosition, buttonText, buttonUseIcon, label, placeholder, showLabel, width, widthUnit
 
 ## Separator
@@ -613,7 +613,7 @@ Create a break between ideas or sections with a horizontal separator.
 
 -	**Name:** core/separator
 -	**Category:** design
--	**Supports:** align, anchor
+-	**Supports:** align (center, full, wide), anchor
 -	**Attributes:** color, customColor
 
 ## Shortcode
@@ -640,7 +640,7 @@ Describe in a few words what the website is about. The tagline can be used in se
 
 -	**Name:** core/site-tagline
 -	**Category:** design
--	**Supports:** align, color, spacing, typography
+-	**Supports:** align (full, wide), color, spacing, typography
 -	**Attributes:** textAlign
 
 ## Site Title
@@ -649,7 +649,7 @@ Displays the name of this site. Update the block, and the changes apply everywhe
 
 -	**Name:** core/site-title
 -	**Category:** design
--	**Supports:** align, color, spacing, typography
+-	**Supports:** align (full, wide), color, spacing, typography
 -	**Attributes:** isLink, level, linkTarget, textAlign
 
 ## Social Icon
@@ -667,7 +667,7 @@ Display icons linking to your social media profiles or websites.
 
 -	**Name:** core/social-links
 -	**Category:** widgets
--	**Supports:** align, anchor, spacing
+-	**Supports:** align (center, left, right), anchor, spacing
 -	**Attributes:** customIconBackgroundColor, customIconColor, iconBackgroundColor, iconBackgroundColorValue, iconColor, iconColorValue, openInNewTab, size
 
 ## Spacer
@@ -721,7 +721,7 @@ Display the description of categories, tags and custom taxonomies when viewing a
 
 -	**Name:** core/term-description
 -	**Category:** theme
--	**Supports:** align, color, typography
+-	**Supports:** align (full, wide), color, typography
 -	**Attributes:** textAlign
 
 ## Text Columns (deprecated)
