@@ -47,7 +47,7 @@ Prompt visitors to take action with a group of button-style links.
 -	**Name:** core/buttons
 -	**Category:** design
 -	**Supports:** align (full, wide), anchor, spacing (blockGap, margin)
--	**Attributes:** contentJustification, orientation
+-	**Attributes:** 
 
 ## Calendar
 
@@ -73,7 +73,7 @@ Display code snippets that respect your spacing and tabs.
 
 -	**Name:** core/code
 -	**Category:** text
--	**Supports:** anchor, color (background, gradients, text), spacing (margin, padding), typography (fontSize)
+-	**Supports:** anchor, color (background, gradients, text), spacing (margin, padding), typography (fontSize, lineHeight)
 -	**Attributes:** content
 
 ## Column
@@ -91,8 +91,62 @@ Display content in multiple columns, with blocks added to each column.
 
 -	**Name:** core/columns
 -	**Category:** design
--	**Supports:** align (full, wide), anchor, color (gradients, link), spacing (blockGap, margin)
+-	**Supports:** align (full, wide), anchor, color (gradients, link), spacing (blockGap, margin, padding)
 -	**Attributes:** isStackedOnMobile, verticalAlignment
+
+## Comment Author Avatar
+
+Add the avatar of this comment's author.
+
+-	**Name:** core/comment-author-avatar
+-	**Category:** theme
+-	**Supports:** color (background)
+-	**Attributes:** height, width
+
+## Comment Author Name
+
+Add the author name of this comment.
+
+-	**Name:** core/comment-author-name
+-	**Category:** theme
+-	**Supports:** color (gradients, link), spacing (margin, padding), typography (fontSize, lineHeight)
+-	**Attributes:** isLink, linkTarget, textAlign
+
+## Comment Content
+
+Displays the contents of a comment.
+
+-	**Name:** core/comment-content
+-	**Category:** theme
+-	**Supports:** color (gradients, link), spacing (padding), typography (fontSize, lineHeight)
+-	**Attributes:** textAlign
+
+## Comment Date
+
+Add the date of this comment.
+
+-	**Name:** core/comment-date
+-	**Category:** theme
+-	**Supports:** color (gradients, link), typography (fontSize, lineHeight)
+-	**Attributes:** format, isLink
+
+## Comment Edit Link
+
+Displays a link to edit the comment in the WordPress Dashboard. This link is only visible to users with the edit comment capability.
+
+-	**Name:** core/comment-edit-link
+-	**Category:** theme
+-	**Supports:** color (gradients, link), typography (fontSize, lineHeight)
+-	**Attributes:** linkTarget, textAlign
+
+## Comment Reply Link
+
+Displays a link to reply to a comment.
+
+-	**Name:** core/comment-reply-link
+-	**Category:** theme
+-	**Supports:** color (gradients, link), typography (fontSize, lineHeight)
+-	**Attributes:** textAlign
 
 ## Comment Template
 
@@ -226,7 +280,7 @@ Create a bulleted or numbered list.
 
 -	**Name:** core/list
 -	**Category:** text
--	**Supports:** __unstablePasteTextInline, anchor, color (gradients, link), typography (fontSize)
+-	**Supports:** __unstablePasteTextInline, anchor, color (gradients, link), typography (fontSize, lineHeight)
 -	**Attributes:** ordered, placeholder, reversed, start, type, values
 
 ## Login/out
@@ -272,7 +326,16 @@ A collection of blocks that allow visitors to get around your site.
 -	**Name:** core/navigation
 -	**Category:** theme
 -	**Supports:** align (full, wide), anchor, inserter, spacing (blockGap, units), typography (fontSize, lineHeight)
--	**Attributes:** __unstableLocation, backgroundColor, customBackgroundColor, customOverlayBackgroundColor, customOverlayTextColor, customTextColor, itemsJustification, navigationMenuId, openSubmenusOnClick, orientation, overlayBackgroundColor, overlayMenu, overlayTextColor, rgbBackgroundColor, rgbTextColor, showSubmenuIcon, textColor
+-	**Attributes:** __unstableLocation, backgroundColor, customBackgroundColor, customOverlayBackgroundColor, customOverlayTextColor, customTextColor, navigationMenuId, openSubmenusOnClick, overlayBackgroundColor, overlayMenu, overlayTextColor, rgbBackgroundColor, rgbTextColor, showSubmenuIcon, textColor
+
+## Navigation Area
+
+Define a navigation area for your theme. The navigation block associated with this area will be automatically displayed.
+
+-	**Name:** core/navigation-area
+-	**Category:** theme
+-	**Supports:** inserter
+-	**Attributes:** area
 
 ## Custom Link
 
@@ -345,60 +408,6 @@ This block is deprecated. Please use the Comments Query Loop block instead.
 -	**Category:** theme
 -	**Supports:** 
 -	**Attributes:** commentId
-
-## Comment Author
-
-Add the author of this comment.
-
--	**Name:** core/post-comment-author
--	**Category:** theme
--	**Supports:** color (gradients, link), typography (fontSize, lineHeight)
--	**Attributes:** isLink, linkTarget, textAlign
-
-## Comment Author Avatar
-
-Add the avatar of this comment's author.
-
--	**Name:** core/post-comment-author-avatar
--	**Category:** theme
--	**Supports:** color (background)
--	**Attributes:** height, width
-
-## Comment Content
-
-Displays the contents of a comment.
-
--	**Name:** core/post-comment-content
--	**Category:** theme
--	**Supports:** color (gradients, link), spacing (padding), typography (fontSize, lineHeight)
--	**Attributes:** textAlign
-
-## Comment Date
-
-Add the date of this comment.
-
--	**Name:** core/post-comment-date
--	**Category:** theme
--	**Supports:** color (gradients, link), typography (fontSize, lineHeight)
--	**Attributes:** format, isLink
-
-## Comment Edit Link
-
-Displays a link to edit the comment in the WordPress Dashboard. This link is only visible to users with the edit comment capability.
-
--	**Name:** core/post-comment-edit
--	**Category:** theme
--	**Supports:** color (gradients, link), typography (fontSize, lineHeight)
--	**Attributes:** linkTarget, textAlign
-
-## Comment Reply Link
-
-Displays a link to reply to a comment.
-
--	**Name:** core/post-comment-reply-link
--	**Category:** theme
--	**Supports:** color (gradients, link), typography (fontSize, lineHeight)
--	**Attributes:** textAlign
 
 ## Post Comments
 
@@ -514,7 +523,7 @@ Add text that respects your spacing and tabs, and also allows styling.
 
 -	**Name:** core/preformatted
 -	**Category:** text
--	**Supports:** anchor, color (gradients), typography (fontSize)
+-	**Supports:** anchor, color (gradients), typography (fontSize, lineHeight)
 -	**Attributes:** content
 
 ## Pullquote
@@ -523,7 +532,7 @@ Give special visual emphasis to a quote from your text.
 
 -	**Name:** core/pullquote
 -	**Category:** text
--	**Supports:** align (full, left, right, wide), anchor, color (background, gradients, link)
+-	**Supports:** align (full, left, right, wide), anchor, color (background, gradients, link), typography (fontSize, lineHeight)
 -	**Attributes:** citation, textAlign, value
 
 ## Query Loop
@@ -586,7 +595,7 @@ Give quoted text visual emphasis. "In quoting others, we cite ourselves." — Ju
 
 -	**Name:** core/quote
 -	**Category:** text
--	**Supports:** anchor
+-	**Supports:** anchor, typography (fontSize, lineHeight)
 -	**Attributes:** align, citation, value
 
 ## RSS
@@ -685,7 +694,7 @@ Create structured content in rows and columns to display information.
 
 -	**Name:** core/table
 -	**Category:** text
--	**Supports:** align, anchor, color (gradients)
+-	**Supports:** align, anchor, color (gradients), typography (fontSize, lineHeight)
 -	**Attributes:** body, caption, foot, hasFixedLayout, head
 
 ## Table of Contents
@@ -739,7 +748,7 @@ Insert poetry. Use special spacing formats. Or quote song lyrics.
 
 -	**Name:** core/verse
 -	**Category:** text
--	**Supports:** anchor, color (gradients, link), spacing (padding), typography (fontSize)
+-	**Supports:** anchor, color (gradients, link), spacing (padding), typography (fontSize, lineHeight)
 -	**Attributes:** content, textAlign
 
 ## Video
