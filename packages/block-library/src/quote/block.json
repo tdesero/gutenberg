@@ -10,7 +10,7 @@
 		"citation": {
 			"type": "string",
 			"source": "html",
-			"selector": "cite",
+			"selector": "figcaption",
 			"default": "",
 			"__experimentalRole": "content"
 		},
