@@ -230,7 +230,6 @@ export default function EntitiesSavedStates( { close } ) {
 			{ discardEntitiesPanel ? (
 				<DiscardEntityChangesPanel
 					closePanel={ dismissPanel }
-					dirtyEntityRecords={ dirtyEntityRecords }
 					savables={ sortedPartitionedSavables.flat() }
 				/>
 			) : (
