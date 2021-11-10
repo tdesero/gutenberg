@@ -7,7 +7,7 @@
 	"keywords": [ "blockquote", "cite" ],
 	"textdomain": "default",
 	"attributes": {
-		"citation": {
+		"attribution": {
 			"type": "string",
 			"source": "html",
 			"selector": "figcaption",
