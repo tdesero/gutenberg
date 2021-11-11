@@ -10,6 +10,7 @@ import {
 	StyledField as BaseControlField,
 	Wrapper as BaseControlWrapper,
 } from '../base-control/styles/base-control-styles';
+import { LabelWrapper } from '../input-control/styles/input-control-styles';
 import { COLORS, CONFIG } from '../utils';
 import { space } from '../ui/utils/space';
 
@@ -105,6 +106,15 @@ export const ToolsPanelItem = css`
 
 		${ BaseControlField } {
 			margin-bottom: 0;
+		}
+	}
+
+	/* Standardize InputControl labels with others inside ToolsPanel. */
+	&& ${ LabelWrapper } {
+		label {
+			margin-bottom: ${ space( 2 ) };
+			padding-bottom: 0;
+			line-height: 1.4em;
 		}
 	}
 `;
